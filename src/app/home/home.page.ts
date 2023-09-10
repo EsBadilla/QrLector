@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
+dato:any;
+  constructor(private route: ActivatedRoute) {
+    this.route.paramMap.subscribe((params)=>{
+      this.dato = params.get('data');
+    })
+  }
 
 }
