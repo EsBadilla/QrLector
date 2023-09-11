@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class ForgotPage implements OnInit {
   usuarios:user[]=[
     {id:1,nombre:'Esteban',password:'LotoRey'},
-    {id:2,nombre:'Camilo',password:'Topito'},
-    {id:3,nombre:'Alan',password:'JisoRika'},
-    {id:4,nombre:'Franco',password:'Chikito20156'},
-    {id:5,nombre:'Juan',password:'JuanShuster'},
+    {id:2,nombre:'Alan',password:'JisooRika'},
+    {id:3,nombre:'Franco',password:'Chikito20156'},
+    {id:4,nombre:'Juan',password:'JuanSchuster'},
+    {id:5,nombre:'Profe',password:'12345'},
   ]
   user:any;
   constructor(private route:Router) {}
