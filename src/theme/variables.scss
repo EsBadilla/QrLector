@@ -4,7 +4,7 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #004643;
+  --ion-color-primary: #0D0C52;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -76,6 +76,19 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
+body{
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 0, 93, 89;
+
+  --ion-item-background: #302E8B;
+
+  --ion-toolbar-background: #0D0C52;
+
+  --ion-tab-bar-background: #1f1f1f;
+
+  --ion-card-background: #1F1D6F;
+}
+
 @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors
@@ -83,7 +96,7 @@
    */
 
   body {
-    --ion-color-primary: #004643;
+    --ion-color-primary: #0D0C52;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255,255,255;
@@ -153,7 +166,7 @@
    */
 
   .ios body {
-    --ion-background-color: #005D59;
+    --ion-background-color: #ffffff;
     --ion-background-color-rgb:0, 93, 89;
 
     --ion-text-color: #ffffff;
@@ -179,11 +192,11 @@
     --ion-color-step-900: #e6e6e6;
     --ion-color-step-950: #f2f2f2;
 
-    --ion-item-background: #004643;
+    --ion-item-background: #302E8B;
 
-    --ion-toolbar-background: #002927;
+    --ion-toolbar-background: #0D0C52;
 
-    --ion-card-background: #1c1c1d;
+    --ion-card-background: #1F1D6F;
   }
 
   .ios ion-modal {
@@ -199,8 +212,8 @@
    */
 
   .md body {
-    --ion-background-color: #005D59;
-    --ion-background-color-rgb: 0, 93, 89;
+    --ion-background-color: #ffffff;
+    --ion-background-color-rgb: 255, 255, 255;
 
     --ion-text-color: #ffffff;
     --ion-text-color-rgb: 255,255,255;
@@ -227,12 +240,12 @@
     --ion-color-step-900: #e7e7e7;
     --ion-color-step-950: #f3f3f3;
 
-    --ion-item-background: #004643;
+    --ion-item-background: #302E8B;
 
-    --ion-toolbar-background: #002927;
-
+    --ion-toolbar-background: #0D0C52;
+  
     --ion-tab-bar-background: #1f1f1f;
-
-    --ion-card-background: #1e1e1e;
+  
+    --ion-card-background: #1F1D6F;
   }
 }

@@ -1,27 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title style="color: white;">RegistrApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
+      <ion-title size="large">RegistrApp</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br><br><br><br><br><br><br>
+  <img src="../../assets/logo.png" alt="duoc">
   <ion-card class="Base">
     <h1 class="ion-text-center">Inicio de Sesión</h1>
     <ion-card>
       <ion-item>
-        <ion-label position="floating">User</ion-label>
-        <ion-input name="user" placeholder="Usuario" [(ngModel)]="user"></ion-input>
+        <ion-label position="floating" class="Link">User</ion-label>
+        <ion-input name="user" placeholder="Usuario" [(ngModel)]="user" class="Link"></ion-input>
       </ion-item>
     </ion-card>
     <ion-card>
       <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input name="Password" placeholder="Contraseña" type="Password" [(ngModel)]="password" fill="outline"></ion-input>
+        <ion-label class="Link" position="floating">Password</ion-label>
+        <ion-input name="Password" placeholder="Contraseña" type="Password" [(ngModel)]="password" fill="outline" class="Link"></ion-input>
       </ion-item>
     </ion-card>
     <div class="ion-text-center">
