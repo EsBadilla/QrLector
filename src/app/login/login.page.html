@@ -14,20 +14,24 @@
   <img src="../../assets/logo.png" alt="duoc">
   <ion-card class="Base">
     <h1 class="ion-text-center">Inicio de Sesión</h1>
-    <ion-card>
-      <ion-item>
-        <ion-label position="floating" class="Link">User</ion-label>
-        <ion-input name="user" placeholder="Usuario" [(ngModel)]="user" class="Link"></ion-input>
-      </ion-item>
-    </ion-card>
-    <ion-card>
-      <ion-item>
-        <ion-label class="Link" position="floating">Password</ion-label>
-        <ion-input name="Password" placeholder="Contraseña" type="Password" [(ngModel)]="password" fill="outline" class="Link"></ion-input>
-      </ion-item>
-    </ion-card>
+    <form>
+    <div class="ion-padding">
+      <ion-card>
+        <ion-item>
+          <ion-label position="floating" class="Link">Email</ion-label>
+          <ion-input name="email" placeholder="Email" [(ngModel)]="email" class="Link"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-label class="Link" position="floating">Constraseña</ion-label>
+          <ion-input name="Password" placeholder="Contraseña" type="Password" [(ngModel)]="password" fill="outline" class="Link"></ion-input>
+        </ion-item>
+      </ion-card>
+    </div>
+  </form>
     <div class="ion-text-center">
-      <ion-button shape="round" (click)="validarUser()" color="primary">Iniciar Sesión</ion-button>
+      <ion-button shape="round" (click)="login()" color="primary">Iniciar Sesión</ion-button>
     </div>
     <div class="ion-text-center">
       <a href="/forgot" class="Link">Olvide mi contraseña</a>

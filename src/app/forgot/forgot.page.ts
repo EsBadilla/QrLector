@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { user } from '../app.models';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoadingController } from '@ionic/angular';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-forgot',
@@ -8,25 +10,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./forgot.page.scss'],
 })
 export class ForgotPage implements OnInit {
-  usuarios:user[]=[
-    {id:1,nombre:'Esteban',password:'LotoRey'},
-    {id:2,nombre:'Alan',password:'JisooRika'},
-    {id:3,nombre:'Franco',password:'Chikito20156'},
-    {id:4,nombre:'Juan',password:'JuanSchuster'},
-    {id:5,nombre:'Profe',password:'12345'},
-  ]
-  user:any;
-  constructor(private route:Router) {}
-  RecoverUser(){
-    for(const i of this.usuarios){
-      if(i.nombre==this.user){
-        this.route.navigate(['/login'])
-      }
-    }
-  }
-  
-
+  forgForm : FormGroup
+  email:any;
+  constructor(private router:Router, public formBuilder:FormBuilder, public loadingCtrl: LoadingController, public authService:AuthenticationService) {}
   ngOnInit() {
+    this.forgForm = this.formBuilder.group({
+      email : ['',[
+        Validators.required,
+        Validators.email,
+        Validators.pattern("[a-z0,9._%+\-]+@[a-z0,9.\-]+.[a-z]{2,}$")
+      ]],
+    })
+  }
+  get errorControl(){
+    return this.forgForm?.controls;
+  }
+
+  async reset(){
+    this.authService.resetPassword(this.email)
+    this.router.navigate(['/login'])
   }
 
 }
