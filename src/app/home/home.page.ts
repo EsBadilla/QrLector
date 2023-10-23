@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Animation, AnimationController } from '@ionic/angular';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { Animation, AnimationController } from '@ionic/angular';
 export class HomePage implements OnInit{
   private animacion: Animation = {} as Animation;
   dato:any;
-  constructor(private route: ActivatedRoute, private AnimationCtrl: AnimationController) {
+  constructor(private router:Router,private route: ActivatedRoute, private AnimationCtrl: AnimationController, public authService:AuthenticationService) {
     this.route.paramMap.subscribe((params)=>{
       this.dato = params.get('data');
     })
@@ -24,8 +25,8 @@ export class HomePage implements OnInit{
     this.animacion.play();
 
   }
+  salir(){
+    this.authService.signOut()
+    this.router.navigate(['']);
+  }
 }
-function ngOnInit() {
-  throw new Error('Function not implemented.');
-}
-
