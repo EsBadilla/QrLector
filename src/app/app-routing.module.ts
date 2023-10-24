@@ -23,10 +23,6 @@ const routes: Routes = [
     path: 'api-rest',
     loadChildren: () => import('./api-rest/api-rest.module').then( m => m.ApiRestPageModule)
   },
-  {
-    path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
-  },
 ];
 
 @NgModule({
