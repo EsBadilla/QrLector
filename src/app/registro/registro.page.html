@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Registro</ion-title>
+    <ion-title class="Link">Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +10,8 @@
       <ion-title size="large">Registro</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div class="container">
+  <div class="ion-padding">
+    <br><br><br><br>
   <ion-item>
     <ion-label position="floating" class="Link">Nombre</ion-label>
     <ion-input name="Nombre" placeholder="" [(ngModel)]="nom" class="Link"><span class="material-symbols-outlined">
@@ -19,14 +20,16 @@
   </ion-item>
   <ion-item>
     <ion-label position="floating" class="Link">Asignatura</ion-label>
-    <ion-input name="Nombre" placeholder="" [(ngModel)]="asig" class="Link"><span class="material-symbols-outlined">
-      person
-      </span></ion-input>
+    <ion-input name="Asignatura" placeholder="" [(ngModel)]="asig" class="Link"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" class="Link">Dia de clase</ion-label>
+    <ion-input type="Date" name="Fecha" placeholder="" [(ngModel)]="fec" class="Link"></ion-input>
   </ion-item>
 </div>
-  <ion-button (click)="addData()">
-    Registrarse
-  </ion-button>
+<div class="ion-text-center">
+<ion-button (click)="addData()">Registrarse</ion-button>
+</div>
 </ion-content>
 <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
