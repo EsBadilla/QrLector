@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
 import { AuthenticationService } from '../authentication.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginPage implements OnInit {
   loginForm : FormGroup
   email:any;
   password:any;
-  constructor(private router:Router, public formBuilder:FormBuilder, public loadingCtrl: LoadingController, public authService:AuthenticationService) {
+  constructor(private alertCtrl: AlertController,private router:Router, public formBuilder:FormBuilder, public loadingCtrl: LoadingController, public authService:AuthenticationService) {
 
   }
   ngOnInit() {
@@ -37,7 +38,7 @@ export class LoginPage implements OnInit {
     const loading = await this.loadingCtrl.create();
     await loading.present();
       const user = await this.authService.loginUser(this.email,this.password).catch((error) => {
-        console.log(error);
+        this.showAlert('Error de inicio de sesión', 'Email o contraseña incorrectos');
         loading.dismiss()
       })
       if(user){
@@ -47,5 +48,14 @@ export class LoginPage implements OnInit {
         console.log('provide correct values');
         
       }
+    }
+
+    async showAlert(title: string, message: string) {
+      const alert = await this.alertCtrl.create({
+        header: title,
+        message: message,
+        buttons: ['Entendido']
+      });
+      await alert.present();
     }
 }

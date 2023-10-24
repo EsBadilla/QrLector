@@ -1,19 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="Link">
+    <ion-title >
       Inicio
     </ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="salir()">
-        <span class="material-symbols-outlined">
-          arrow_back
-          </span>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="Link animate__jello" >
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Inicio</ion-title>
@@ -24,10 +17,26 @@
     <ion-card class="Base" >
       <h1 class="texto">Bienvenido {{dato}}</h1>
       <br>
-    <ion-button color="primary" shape="round">Abrir Camara</ion-button>
-    <br><br>
-    <a href="/login" class="Link">Volver</a>
-    <br><br>
   </ion-card>
   </div>
+  <ion-tabs>
+    <ion-tab-bar slot="salir">
+      <ion-tab-button tab="home" (click)="salir()">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        Cerrar Sesión
+      </ion-tab-button>
+      <ion-tab-button tab="camara" (click)="takePicture()">
+        <ion-icon name="qr-code-outline"></ion-icon>
+        Escanear QR
+      </ion-tab-button>
+      <ion-tab-button tab="Api" (click)="api()">
+        <ion-icon name="library"></ion-icon>
+        Api
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
+
+
+
+

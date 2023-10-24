@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Animation, AnimationController } from '@ionic/angular';
 import { AuthenticationService } from '../authentication.service';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-home',
@@ -29,4 +30,15 @@ export class HomePage implements OnInit{
     this.authService.signOut()
     this.router.navigate(['']);
   }
+
+  takePicture(){
+    Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });}
+
+    async api(){
+      this.router.navigate(['/api-rest'])
+    }
 }

@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      pagina {{cont-1}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="volver()">
+        <span class="material-symbols-outlined">
+          chevron_left
+          </span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">API REST</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let c of data">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="c.image"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Nombre: {{ c.name }}</h2>
+          <p>especie:{{ c.species }} / Genero: {{c.gender}}</p>
+          <p>estado:{{c.status}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="next()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

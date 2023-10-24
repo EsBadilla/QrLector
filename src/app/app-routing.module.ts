@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'forgot',
     loadChildren: () => import('./forgot/forgot.module').then( m => m.ForgotPageModule)
   },
+  {
+    path: 'api-rest',
+    loadChildren: () => import('./api-rest/api-rest.module').then( m => m.ApiRestPageModule)
+  },
 ];
 
 @NgModule({

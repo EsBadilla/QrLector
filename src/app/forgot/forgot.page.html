@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="animate__backInUp">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Forgot</ion-title>
@@ -18,7 +18,9 @@
     <ion-card>
       <ion-item>
         <ion-label class="Link" position="floating" >Email</ion-label>
-        <ion-input class="Link" placeholder="Usuario" name="usuario" [(ngModel)]="email"></ion-input>
+        <ion-input class="Link" placeholder="Usuario" name="usuario" [(ngModel)]="email"><span class="material-symbols-outlined">
+          person
+          </span></ion-input>
       </ion-item>
     </ion-card>
     <div class="ion-text-center">
