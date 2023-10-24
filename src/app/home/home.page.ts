@@ -41,4 +41,8 @@ export class HomePage implements OnInit{
     async api(){
       this.router.navigate(['/api-rest'])
     }
+
+    Registro(){
+      this.router.navigate(['/registro'])
+    }
 }
